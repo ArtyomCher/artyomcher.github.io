@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создатель паролей</title>
+    <link rel="icon" href="https://img.icons8.com/ios/50/000000/password-window.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Создатель паролей</h1>
+    </header>
+
+    <form>
+        <div class="len">
+            <label>Длина пароля</label>
+            <input class="len_txt" type="number" id="lenID" 
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" 
+            maxlength="2" min="0" step="1">
+        </div>
+
+        <div class="pw">
+            <label>Пароль</label>
+            <input class="pw_txt" type="text" id="pwID" readonly>
+        </div>
+
+        <button type="button" onclick="showPW()">Создать</button>
+    </form>
+
+    <script>
+        var data = "1234567890abcefghijklmnopqrstuvwxyz";
+        var password = "";
+        function showPW() {
+            for (var i = 0; i < lenID.value; i++) {
+                password += data.charAt(Math.floor(Math.random() * data.length))
+            }
+            console.log(password);
+            pwID.value = password;
+            password = "";
+        }
+    </script>
+
+</body>
+</html>
