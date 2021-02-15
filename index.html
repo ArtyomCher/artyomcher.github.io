@@ -32,11 +32,12 @@
     </form>
 
     <script>
-        var data = "1234567890abcefghijklmnopqrstuvwxyz";
+        var data1 = "1234567890abcefghijklmnopqrstuvwxyz";
+        var data2 = "1234567890йфяцычувскамепинртгоьшлбщдюзжхъэё";
         var password = "";
         function showPW() {
             for (var i = 0; i < lenID.value; i++) {
-                password += data.charAt(Math.floor(Math.random() * data.length))
+                password += data2.charAt(Math.floor(Math.random() * data2.length))
             }
             pwID.value = password;
             password = "";
